@@ -1,0 +1,41 @@
+public class TestCode {
+  private static long combinations;
+
+  public static void main( String[] args ) {
+  	long startTime = System.nanoTime();
+
+    int[] coins = new int[8];
+
+    coins[0] = 1;
+    coins[1] = 2;
+    coins[2] = 5;
+    coins[3] = 10;
+    coins[4] = 20;
+    coins[5] = 50;
+    coins[6] = 100;
+    coins[7] = 200;
+
+    recCombs(coins,0,0,0,0);
+
+    System.out.println( "Combinations: " + combinations );
+    System.out.println( "- - - - - - - - - - - - - - - - - - - " );
+    long endTime = System.nanoTime();
+		long duration = (endTime - startTime);
+		System.out.println("Execution time: " + duration / (Math.pow(10, 9)) + " s");
+  }
+
+  private static int recCombs(int[] p, int coinType, int curAmount, int prevAmount, int prevSum) {
+    int cursum = prevsum + curAmount * p[coinType];
+
+    if(cursum > 200) {
+      return
+    }
+    if(cursum == 200) {
+      combinations++;
+
+    }
+
+
+    return 1;
+  }
+}
